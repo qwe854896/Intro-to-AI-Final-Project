@@ -64,8 +64,8 @@ def main():
         y = app.winfo_rooty() + widget.winfo_y()
         x1 = x * 2 + widget.winfo_width() * 2
         y1 = y * 2 + widget.winfo_height() * 2
-        now = datetime.datetime.now()
-        ImageGrab.grab().crop((x * 2, y * 2, x1, y1)).save(str(now) + ".png")
+        fileName = str(datetime.datetime.now()).replace(":", "-")
+        ImageGrab.grab().crop((x * 2, y * 2, x1, y1)).save(fileName + ".png")
         print(isAnime.get(), isConcise.get(), isClassical.get())
 
     app.mainloop()
